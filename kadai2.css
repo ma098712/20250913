@@ -1,0 +1,201 @@
+header {
+  background-color: #4b95f7;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  font-family: fantasy;
+  margin-bottom: 20px;
+}
+
+#profile,
+#skills {
+  background-color: rgba(244, 238, 243, 0.92);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(23, 22, 22, 0.1);
+  font-family: fantasy;
+}
+
+#contact {
+  text-align: center;
+  margin-top: 0px;
+  font-family: fantasy;
+  margin-bottom: 0px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(23, 22, 22, 0.1);
+  background-color: rgba(244, 238, 243, 0.92);
+}
+
+#contact h2 {
+  color: rgb(13, 28, 193);
+}
+
+body {
+  margin: 0;
+  background-image: url('https://drive.google.com/thumbnail?id=17fET6z85DViWVpglExJ8b-gaoHso_Gqt&sz=w670');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.profile-image {
+  width: 20%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.hamburger-menu {
+  position: relative;
+  z-index: 101;
+}
+
+#menu_check {
+  display: none;
+}
+
+.menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: red;
+}
+
+.menu-button span,
+.menu-button span::before,
+.menu-button span::after {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-button span::before {
+  content: '';
+  transform: translateY(-8px);
+}
+
+.menu-button span::after {
+  content: '';
+  transform: translateY(8px);
+}
+
+#menu_check:checked+.menu-button span {
+  background-color: transparent;
+}
+
+#menu_check:checked+.menu-button span::before {
+  transform: rotate(45deg);
+}
+
+#menu_check:checked+.menu-button span::after {
+  transform: rotate(-45deg);
+}
+
+.menu-list {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background-color: rgba(255, 0, 0, 0.5);
+  transition: right 0.5s ease;
+  padding-top: 80px;
+  z-index: 102;
+}
+
+#menu_check:checked~.menu-list {
+  right: 0;
+}
+
+.menu-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu-list li a {
+  display: block;
+  padding: 15px 0;
+  color: black;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.close-menu-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 104;
+}
+
+.close-menu-button span::before,
+.close-menu-button span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+}
+
+.close-menu-button span::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-menu-button span::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.sp-likes {
+  display: none;
+}
+
+/*ここからメディアクエリ*/
+@media (max-width: 768px) {
+  .menu-list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  img {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* PC用のコンテンツを非表示にする */
+  .pc-skills {
+    display: none;
+  }
+
+  /* モバイル用のコンテンツを表示する */
+  .sp-likes {
+    display: block;
+  }
+}
