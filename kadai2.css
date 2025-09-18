@@ -208,3 +208,17 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
+  #contact button[type="submit"] {
+    margin-top: 20px;
+  }
+}
+
+#contact label,
+#contact input,
+#contact textarea,
+#contact button[type="submit"] {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
